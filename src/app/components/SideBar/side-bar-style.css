@@ -68,7 +68,13 @@
     --pink-100-color: #F7D6E6;
 }
 
+.menu-collapsed-width{
+    width:var(--menu-collapsed-width) !important ;
+}
 
+.menu-collapse-width{
+    width:var(--menu-collapse-width) !important ;
+}
 /*breakpoints seguindo padrões bootstrap*/
 
 /*----------------------X-Small*/
@@ -104,6 +110,7 @@ menu bottom
 
 
 /*lista para mobile*/
+
 .withSideBarList .ulDropClesed {
     list-style: none;
     width: 10rem;
@@ -159,7 +166,7 @@ menu bottom
     min-height: var(--menu-collapsed-width);
 }
 
-.nav_ a {
+.nav_ .nav-link {
     text-decoration: none;
     width: 4.25rem;
 
@@ -216,14 +223,14 @@ span, ul{
 
 }
 
-.noSideBarList, .withSideBarList a {
+.noSideBarList, .withSideBarList .nav-link {
     color: var(--gray-700-color);
 
 }
 
 /***formatação sem drop lista ***/
 
-.noSideBarList a {
+.noSideBarList .nav-link {
     width: 100%;
     display: flex;
     align-items: center;
@@ -233,13 +240,13 @@ span, ul{
     color: var(--gray-700-color);
 }
 
-.noSideBarList a i {
+.noSideBarList .nav-link i {
     width: 4.25rem;
     text-align: center;
     font-size: 24px;
 }
 
-.noSideBarList a span {
+.noSideBarList .nav-link span {
     width: 8.25rem;
     text-align: start;
 }
@@ -253,27 +260,27 @@ span, ul{
 
 }
 
-.withSideBarList>a:first-child {
+.withSideBarList>.nav-link:first-child {
     display: flex;
     justify-content: space-between;
     height: 4.25rem;
     align-items: center;
 }
 
-.withSideBarList a>i:first-child {
+.withSideBarList .nav-link>i:first-child {
     width: 4.25rem;
     text-align: center;
     font-size: 24px;
 }
 
-.withSideBarList a span {
+.withSideBarList .nav-link span {
     width: 8.25rem;
     display: flex;
     justify-content: space-between;
     display: none;
 }
 
-.withSideBarList a span>i {
+.withSideBarList .nav-link span>i {
     position: relative;
     margin-right: 4px;
 
@@ -299,13 +306,13 @@ span, ul{
 
 }
 
-.withSideBarList .ul li>a {
+.withSideBarList .ul li>.nav-link {
     margin-left: 24px;
     top: -0.5rem;
     position: relative;
 }
 
-.withSideBarList .ul li>a:hover {
+.withSideBarList .ul li>.nav-link:hover {
     margin-left: 28px;
 
 }
@@ -319,7 +326,7 @@ span, ul{
 
 }
 
-#footerSideBar>a {
+#footerSideBar>.nav-link {
     width: 100%;
     display: flex;
     align-items: center;
@@ -328,7 +335,7 @@ span, ul{
 
 }
 
-#footerSideBar a>i {
+#footerSideBar .nav-link>i {
     width: 4.25rem;
     height: 4.25rem;
     text-align: center;
@@ -339,7 +346,7 @@ span, ul{
 
 }
 
-#footerSideBar a span {
+#footerSideBar .nav-link span {
     width: 8.25rem;
     text-align: start;
     display: flex;
@@ -428,6 +435,7 @@ menu lateral
     border-right: 2px solid #CED4DA;
     border-top: 2px solid #CED4DA;
     border-bottom: 2px solid #CED4DA;
+    
 }
 
 /*****************/
@@ -458,7 +466,7 @@ menu lateral
     min-width: var(--menu-collapsed-width);
 }
 
-.nav_ a {
+.nav_ .nav-link {
     text-decoration: none;
     width: 100%;
 
@@ -479,6 +487,7 @@ menu lateral
     height: 4.25rem;
     border: none;
     justify-content: space-between;
+    cursor:pointer;
 }
 
 #headerSideBar button i {
@@ -510,14 +519,14 @@ menu lateral
 
 }
 
-.noSideBarList, .withSideBarList a {
+.noSideBarList, .withSideBarList .nav-link {
     color: var(--gray-700-color);
 
 }
 
 /***formatação sem drop lista ***/
 
-.noSideBarList a {
+.noSideBarList .nav-link {
     width: 100%;
     display: flex;
     align-items: center;
@@ -527,13 +536,13 @@ menu lateral
     color: var(--gray-700-color);
 }
 
-.noSideBarList a i {
+.noSideBarList .nav-link i {
     width: 4.25rem;
     text-align: center;
     font-size: 24px;
 }
 
-.noSideBarList a span {
+.noSideBarList .nav-link span {
     width: 8.25rem;
     text-align: start;
 }
@@ -544,29 +553,30 @@ menu lateral
 .withSideBarList {
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 
 }
 
-.withSideBarList>a:first-child {
+.withSideBarList>.nav-link:first-child {
     display: flex;
     justify-content: space-between;
     height: 4.25rem;
     align-items: center;
 }
 
-.withSideBarList a>i:first-child {
+.withSideBarList .nav-link>i:first-child {
     width: 4.25rem;
     text-align: center;
     font-size: 24px;
 }
 
-.withSideBarList a span {
+.withSideBarList .nav-link span {
     width: 8.25rem;
     display: flex;
     justify-content: space-between;
 }
 
-.withSideBarList a span>i {
+.withSideBarList .nav-link span>i {
     position: relative;
     margin-right: 4px;
 
@@ -593,13 +603,13 @@ menu lateral
 
 }
 
-.withSideBarList .ul li>a {
+.withSideBarList .ul li>.nav-link {
     margin-left: 24px;
     top: -0.5rem;
     position: relative;
 }
 
-.withSideBarList .ul li>a:hover {
+.withSideBarList .ul li>.nav-link:hover {
     margin-left: 28px;
 
 }
@@ -612,7 +622,7 @@ menu lateral
 
 }
 
-#footerSideBar>a {
+#footerSideBar>.nav-link {
     width: 100%;
     display: flex;
     align-items: center;
@@ -621,7 +631,7 @@ menu lateral
 
 }
 
-#footerSideBar a>i {
+#footerSideBar .nav-link>i {
     width: 4.25rem;
     height: 4.25rem;
     text-align: center;
@@ -632,7 +642,7 @@ menu lateral
 
 }
 
-#footerSideBar a span {
+#footerSideBar .nav-link span {
     width: 8.25rem;
     text-align: start;
     display: flex;
