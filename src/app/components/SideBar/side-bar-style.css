@@ -99,7 +99,7 @@ menu bottom
    
 }
 
-.bi-caret-left-fill{
+.bi-caret-right-fill{
     -webkit-transition: 0.7s;
     -moz-transition: 0.7s;
     -o-transition: 0.7s;
@@ -140,7 +140,7 @@ menu bottom
     flex-flow: row;
     justify-content: space-between;
     align-items: stretch;
-    width:100vw;
+    width:100vw !important;
     height: 4.25rem;
     background-color: var(--gray-100-color);
     border-top: 2px solid #CED4DA;
@@ -392,7 +392,8 @@ menu lateral
    
 }
 
-.bi-x{
+.bi-x,
+.bi-caret-left-fill{
     -webkit-transition: 0.7s;
       -moz-transition: 0.7s;
       -o-transition: 0.7s;
@@ -400,15 +401,8 @@ menu lateral
         transition: all 0.7s;
         transform: rotate(-180deg);
 }
-.bi-list{
-    -webkit-transition: 0.7s;
-    -moz-transition: 0.7s;
-    -o-transition: 0.7s;
-    -ms-transition: 0.7s;
-      transition: all 0.7s;
-      transform: rotate(-360deg);
-}
-
+.bi-list,
+.bi-caret-down-fill,
 .bi-caret-left-fill{
     -webkit-transition: 0.7s;
     -moz-transition: 0.7s;
@@ -417,6 +411,8 @@ menu lateral
       transition: all 0.7s;
       transform: rotate(-360deg);
 }
+
+
 
 
 /*lista para mobile*/

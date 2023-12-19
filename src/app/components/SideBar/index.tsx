@@ -1,5 +1,5 @@
 "use client"
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import './side-bar-style.css'
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
@@ -33,16 +33,14 @@ const SideBar = () => {
   });
 
   // Função para lidar com a ação de dropdown
-  const handle_with_list = (dropdownName:any) => {
-    
-
+  const handle_with_list = (dropdownName: keyof typeof dropdownStates) => {
     if (collapsedStyle === 'menu-collapse-width') {
       // Atualiza o estado apenas para o dropdown clicado
       setDropdownStates((prevState) => ({
         ...prevState,
         [dropdownName]: !prevState[dropdownName],
       }));
-    }  else {
+    } else {
       // Altera o estilo e o estado para o dropdown clicado
       setCollapsedStyle('menu-collapse-width');
       setDropdownStates((prevState) => ({
@@ -56,6 +54,7 @@ const SideBar = () => {
       );
     }
   };
+  
 
   return (
     <>
