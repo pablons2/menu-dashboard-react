@@ -22,6 +22,7 @@ const SideBar = () => {
     }
   };
 
+  
   const [collapsedStyle, setCollapsedStyle] = useState('menu-collapse-width');
   const [hideSpanClass, setHideSpanClass] = useState('');
 
@@ -32,20 +33,27 @@ const SideBar = () => {
   });
 
   // Função para lidar com a ação de dropdown
-  const handle_with_list = (dropdownName) => {
+  const handle_with_list = (dropdownName:any) => {
+    
+
     if (collapsedStyle === 'menu-collapse-width') {
       // Atualiza o estado apenas para o dropdown clicado
       setDropdownStates((prevState) => ({
         ...prevState,
         [dropdownName]: !prevState[dropdownName],
       }));
-    } else {
+    }  else {
       // Altera o estilo e o estado para o dropdown clicado
       setCollapsedStyle('menu-collapse-width');
       setDropdownStates((prevState) => ({
         ...prevState,
         [dropdownName]: !prevState[dropdownName],
       }));
+  
+      // Toggle hideSpanClass
+      setHideSpanClass((prevClass) =>
+        prevClass === '' ? 'display-none' : ''
+      );
     }
   };
 
@@ -60,23 +68,22 @@ const SideBar = () => {
         </div>
 
         <div id="bodySideBar">
-
-          <div className={clsx('noSideBarList', { 'active': pathname === '/' })}>
+        <div className={clsx('noSideBarList', { 'active': pathname === '/' }, { 'display-none': dropdownStates.with_list_2 || dropdownStates.with_list_3 })}>
             <Link href="#" className={`nav-link`}><i className="bi bi-house-door"></i><span className={`${hideSpanClass}`}>Página
             Inicial</span></Link>
           </div>
 
 
-          <div className={clsx('noSideBarList', { 'active': pathname === '/cadastro' })}>
+          <div className={clsx('noSideBarList', { 'active': pathname === '/cadastro' }, { 'display-none': dropdownStates.with_list_2 || dropdownStates.with_list_3 })}>
             <Link href="/cadastro" className="nav-link"><i className="bi bi-file-earmark-text"></i><span className={`${hideSpanClass}`}>Cadastro</span></Link>
           </div>
 
 
-          <div className={clsx('noSideBarList', { 'active': pathname === '/configuracoes' })}>
+          <div className={clsx('noSideBarList', { 'active': pathname === '/configuracoes' }, { 'display-none': dropdownStates.with_list_2 || dropdownStates.with_list_3 })}>
             <Link href="/configuracoes" className="nav-link"> <i className="bi bi-gear"></i><span className={`${hideSpanClass}`}>Configurações</span></Link>
             </div>
 
-            <div className={`withSideBarList`} onClick={() => handle_with_list('with_list_2')}>
+            <div className={clsx('withSideBarList', { 'display-none': dropdownStates.with_list_3 })} onClick={() => handle_with_list('with_list_2')}>
             <div className="nav-link">
               <i className="bi bi-pencil"></i>
               <span className={`${hideSpanClass}`}>Nível 2 <i className={clsx('bi', {'bi-caret-right-fill': !dropdownStates.with_list_2, 'bi-caret-down-fill': dropdownStates.with_list_2})}></i></span>
@@ -90,7 +97,7 @@ const SideBar = () => {
             )}
           </div>
 
-          <div className={`withSideBarList`} onClick={() => handle_with_list('with_list_3')}>
+          <div className={clsx('withSideBarList', { 'display-none': dropdownStates.with_list_2 })} onClick={() => handle_with_list('with_list_3')}>
             <div className="nav-link">
               <i className="bi bi-pencil"></i>
               <span className={`${hideSpanClass}`}>Nível 3 <i className={clsx('bi', {'bi-caret-right-fill': !dropdownStates.with_list_3, 'bi-caret-down-fill': dropdownStates.with_list_3})}></i></span>
