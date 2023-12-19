@@ -26,7 +26,7 @@ const SideBar = () => {
   const [collapsedStyle, setCollapsedStyle] = useState('menu-collapse-width');
   const [hideSpanClass, setHideSpanClass] = useState('');
 
-  // Array de estados para gerenciar os dropdowns
+  // Array de estados para gerenciar os dropdowns! adiciono o nome das listas
   const [dropdownStates, setDropdownStates] = useState({
     with_list_2: false,
     with_list_3: false,
